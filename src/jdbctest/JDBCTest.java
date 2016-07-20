@@ -20,7 +20,7 @@ public class JDBCTest {
 
 	//Database credentials
 	static final String USER = "root";
-	static final String PASS = "mastek";
+	static final String PASS = "";
 	   
 	public static void main(final String[] args) {
 	   Connection conn = null;
