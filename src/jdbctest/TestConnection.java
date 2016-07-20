@@ -20,7 +20,7 @@ import java.sql.*;
 
 	//Database credentials
 	static final String USER = "root";
-	static final String PASS = "mastek";
+	static final String PASS = "";
 		
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
