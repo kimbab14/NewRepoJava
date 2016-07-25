@@ -30,7 +30,7 @@ public class XmlManipulation {
 	 * @xmlFilePath = changeable directory for the XML file.
 	 * this will be use to read the file. 
 	 */
-	private static String xmlFilePath = "C:\\Users\\jelica60589\\Desktop\\Assignment\\61AddrLine.xml";
+	private static String xmlFilePath = "C:\\Users\\jelica60589\\Desktop\\Assignment\\All_Net_62_FinalTest.xml";
 	/**
 	 * Create a constructor which will creates a new File instance,
 	 * by converting the given pathname string into an abstract pathname
@@ -111,22 +111,21 @@ public class XmlManipulation {
 		FileReader fileReader = null;
 		try {
 			fileReader = new FileReader(file);
+			BufferedReader bufferedReader = null;
+			bufferedReader = new BufferedReader(fileReader);
+			String line = null;
+			try {
+					while((line = bufferedReader.readLine()) != null){
+					builder.append(line);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.err.println("Error: Buffered reader failed");
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Error: File reading failed");
 		}
-		BufferedReader bufferedReader = null;
-		bufferedReader = new BufferedReader(fileReader);
-		String line = null;
-		try {
-			while((line = bufferedReader.readLine()) != null){
-				builder.append(line);
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.err.println("Error: Buffered reader failed");
-		}
-	
 		return builder.toString();
 	}
 
@@ -171,26 +170,27 @@ public class XmlManipulation {
 		//Then we create writer to file, if it fails we generate error message
 		try {
 			fileWriter = new FileWriter(file);
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			try {
+				//write our header to the new created file.
+				bufferedWriter.write(header);
+				bufferedWriter.write(xmlString);
+				//write our footer to the new created file.
+				bufferedWriter.write(footer);
+			} catch (IOException e) {
+				System.err.println("Error: Writing to xml file " + file.getName()+ " failed");
+			}
+			try {
+				bufferedWriter.close();
+				fileWriter.close();
+			} catch (IOException e) {
+				System.err.println("Error: Closing file "+ file.getName() +"failed");
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Error: Writing to file " + file.getName() + " failed");
 		}
-		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-		try {
-			//write our header to the new created file.
-			bufferedWriter.write(header);
-			bufferedWriter.write(xmlString);
-			//write our footer to the new created file.
-			bufferedWriter.write(footer);
-		} catch (IOException e) {
-			System.err.println("Error: Writing to xml file " + file.getName()+ " failed");
-		}
-		try {
-			bufferedWriter.close();
-			fileWriter.close();
-		} catch (IOException e) {
-			System.err.println("Error: Closing file "+ file.getName() +"failed");
-		}
+		
 	}
 	
 	/**
