@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * source of the text can be from a String , File , or InputStream object. You can also assign a
  * Locale to a Scanner object.
  *
- * By default, the delimiter for parsing the text is whitespace. To assign a regular expressionc
+ * By default, the delimiter for parsing the text is whitespace. To assign a regular expression
  * as the delimiter, invoke one of the useDelimiter methods of Scanner :
  * - public Scanner useDelimiter(Pattern pattern)
  * - public Scanner useDelimiter(String pattern)

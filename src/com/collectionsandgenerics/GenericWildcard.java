@@ -31,6 +31,12 @@ public class GenericWildcard {
 		str.add("hello");
 		getList(str);
 		
+		ArrayList<Integer> str1 = new ArrayList<Integer>();
+		str1.add(1);
+		getList(str1);
+		System.out.println("Str1 value:" + str1);
+		
+		
 		Set<String> tm = new HashSet<String>();
 		tm.add("i am a set");
 		tm.add("hi, i am the second set");

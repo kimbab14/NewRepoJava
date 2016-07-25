@@ -19,7 +19,7 @@ import java.util.List;
  * @param <T>
  */
 
-public class BoundedGenericType<T extends List> {
+public class BoundedGenericType<E extends List> {
 	
 	public static void main(String[] args) {
 		BoundedGenericType<ArrayList> b = new BoundedGenericType<ArrayList>();
@@ -28,5 +28,10 @@ public class BoundedGenericType<T extends List> {
 		//Bound mismatch: The type HashMap is not a valid substitute for the bounded 
 		//parameter <T extends List> of the type BoundedGenericType<T>
 		//BoundedGenericType<HashMap> d = new BoundedGenericType<HashMap>; //so this is an error.
+		
+	}
+	
+	public <T> void method1(T List){
+		
 	}
 }

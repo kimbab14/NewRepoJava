@@ -65,14 +65,14 @@ public class JavaExceptionsExample {
 			int result = 0;
 			try{
 				if (x == null || y == null  ){
-					throw new IllegalStateException("Enter number first");
+					throw new IllegalStateException("User Defince Exception");
 				}
 				else{
 					result = Integer.parseInt(x) + Integer.parseInt(y);
 					System.out.println(result);
 				}
 			}catch (IllegalStateException e){
-				e.printStackTrace();
+				System.out.println("Enter a Number first.  ");
 			}
 	}
 	
