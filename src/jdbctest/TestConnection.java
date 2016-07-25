@@ -20,7 +20,6 @@ public class TestConnection {
 	static final String DB_URL = "jdbc:mysql://localhost:3306/world";
 
 	//Database credentials
-<<<<<<< HEAD
 	private static final String USER = "root";
 	private static final String PASS = "mastek";
 	private static Connection conn = null;
@@ -28,10 +27,10 @@ public class TestConnection {
 	private static CallableStatement proc = null;
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-=======
-	static final String USER = "root";
-	static final String PASS = "";
->>>>>>> refs/remotes/origin/master
+
+	final String USER = "root";
+	final String PASS = "";
+
 		
 		connectToDB();
 		//callStoredProcedure();

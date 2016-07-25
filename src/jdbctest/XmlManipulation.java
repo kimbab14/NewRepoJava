@@ -24,7 +24,6 @@ import java.util.regex.Pattern;
  * during my 4weeks of learning java core.
  * 
  * @author jelica60589
- *
  */
 public class XmlManipulation {
 	/**
